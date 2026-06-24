@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Software</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>School Software</h1>
+      <p class="subtitle">Simple web app for managing students.</p>
+
+      <section class="card" aria-labelledby="add-student-heading">
+        <h2 id="add-student-heading">Add Student</h2>
+        <form id="student-form">
+          <label for="student-name">Name</label>
+          <input id="student-name" name="name" type="text" required />
+
+          <label for="student-grade">Grade</label>
+          <input id="student-grade" name="grade" type="text" required />
+
+          <button type="submit">Add</button>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="student-list-heading">
+        <h2 id="student-list-heading">Students</h2>
+        <ul id="student-list" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f7fb;
+  color: #1f2937;
+}
+
+.app {
+  max-width: 640px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.subtitle {
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+  color: #4b5563;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: grid;
+  gap: 0.5rem;
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px solid #9ca3af;
+  border-radius: 0.25rem;
+}
+
+button {
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+#student-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
