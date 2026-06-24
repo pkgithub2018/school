@@ -4,7 +4,7 @@ const form = document.getElementById('student-form');
 const list = document.getElementById('student-list');
 
 const renderStudents = () => {
-  list.innerHTML = '';
+  list.textContent = '';
 
   students.forEach((student) => {
     const item = document.createElement('li');
@@ -18,9 +18,10 @@ form.addEventListener('submit', (event) => {
 
   const formData = new FormData(form);
   const name = formData.get('name').toString().trim();
-  const grade = formData.get('grade').toString().trim();
+  const gradeValue = formData.get('grade').toString().trim();
+  const grade = Number.parseInt(gradeValue, 10);
 
-  if (!name || !grade) {
+  if (!name || !Number.isInteger(grade) || grade < 1 || grade > 12) {
     return;
   }
 
