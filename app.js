@@ -1,4 +1,6 @@
 const students = [];
+const MIN_GRADE = 1;
+const MAX_GRADE = 12;
 
 const form = document.getElementById('student-form');
 const list = document.getElementById('student-list');
@@ -16,10 +18,16 @@ form.addEventListener('submit', (event) => {
   const formData = new FormData(form);
   const name = (formData.get('name') ?? '').trim();
   const gradeValue = (formData.get('grade') ?? '').trim();
-  const grade = Number.parseInt(gradeValue, 10);
+  const grade = parseInt(gradeValue, 10);
 
-  if (!name || !gradeValue || Number.isNaN(grade) || grade < 1 || grade > 12) {
-    feedback.textContent = 'Please enter a name and a grade from 1 to 12.';
+  if (
+    !name ||
+    !gradeValue ||
+    Number.isNaN(grade) ||
+    grade < MIN_GRADE ||
+    grade > MAX_GRADE
+  ) {
+    feedback.textContent = `Please enter a name and a grade from ${MIN_GRADE} to ${MAX_GRADE}.`;
     return;
   }
 
