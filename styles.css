@@ -58,3 +58,9 @@ button:hover {
   margin: 0;
   padding-left: 1.25rem;
 }
+
+.feedback {
+  min-height: 1.25rem;
+  margin: 0.75rem 0 0;
+  color: #b91c1c;
+}

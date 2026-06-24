@@ -2,15 +2,12 @@ const students = [];
 
 const form = document.getElementById('student-form');
 const list = document.getElementById('student-list');
+const feedback = document.getElementById('form-feedback');
 
-const renderStudents = () => {
-  list.textContent = '';
-
-  students.forEach((student) => {
-    const item = document.createElement('li');
-    item.textContent = `${student.name} (Grade: ${student.grade})`;
-    list.appendChild(item);
-  });
+const appendStudent = (student) => {
+  const item = document.createElement('li');
+  item.textContent = `${student.name} (Grade: ${student.grade})`;
+  list.appendChild(item);
 };
 
 form.addEventListener('submit', (event) => {
@@ -22,10 +19,12 @@ form.addEventListener('submit', (event) => {
   const grade = Number.parseInt(gradeValue, 10);
 
   if (!name || !Number.isInteger(grade) || grade < 1 || grade > 12) {
+    feedback.textContent = 'Please enter a name and a grade from 1 to 12.';
     return;
   }
 
+  feedback.textContent = '';
   students.push({ name, grade });
-  renderStudents();
+  appendStudent({ name, grade });
   form.reset();
 });
