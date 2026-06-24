@@ -18,7 +18,7 @@ form.addEventListener('submit', (event) => {
   const gradeValue = (formData.get('grade') ?? '').trim();
   const grade = Number.parseInt(gradeValue, 10);
 
-  if (!name || !Number.isInteger(grade) || grade < 1 || grade > 12) {
+  if (!name || !gradeValue || Number.isNaN(grade) || grade < 1 || grade > 12) {
     feedback.textContent = 'Please enter a name and a grade from 1 to 12.';
     return;
   }
